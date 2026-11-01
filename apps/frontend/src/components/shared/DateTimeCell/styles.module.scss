@@ -1,0 +1,6 @@
+@use "../../../styles/layout" as *;
+
+.dateTime {
+  @include flex-column;
+  gap: 2px;
+}

@@ -1,0 +1,15 @@
+@use "../../../styles/layout" as *;
+
+.pagination {
+  @include flex-row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: space(3);
+}
+
+.pages {
+  @include flex-row;
+  align-items: center;
+  gap: space(3);
+}

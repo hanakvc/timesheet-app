@@ -1,0 +1,11 @@
+@use "../../../../styles/layout" as *;
+
+.state {
+  padding: space(2) space(4);
+  list-style: none;
+}
+
+.loadMore {
+  padding: space(1) space(2) space(2);
+  list-style: none;
+}

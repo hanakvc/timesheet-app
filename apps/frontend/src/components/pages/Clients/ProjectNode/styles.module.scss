@@ -1,0 +1,55 @@
+@use "../../../../styles/colors" as *;
+@use "../../../../styles/layout" as *;
+
+.task {
+  @include flex-row;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 space(4) 0 32px;
+  border-radius: radius(small);
+  list-style: none;
+
+  &:hover {
+    background: background(secondary);
+  }
+}
+
+.taskSection {
+  @include flex-row;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+}
+
+.taskDetails {
+  @include flex-row;
+  align-items: center;
+  gap: space(2);
+  min-width: 0;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: color(muted);
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logTime {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.status {
+  @include flex-row;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  min-width: 100px;
+}

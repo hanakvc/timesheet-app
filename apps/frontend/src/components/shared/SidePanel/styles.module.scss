@@ -1,0 +1,64 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: background(overlay);
+}
+
+.panel {
+  @include flex-column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(480px, 100%);
+  background: background(primary);
+  border-left: 1px solid border-color(primary);
+  outline: none;
+  animation: slide-in 0.18s ease-out;
+}
+
+.header {
+  @include flex-row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: space(3);
+  padding: space(6);
+  border-bottom: 1px solid border-color(primary);
+}
+
+.titles {
+  @include flex-column;
+  gap: space(1);
+  min-width: 0;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: space(6);
+}
+
+.footer {
+  @include flex-row;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: space(4) space(6);
+  border-top: 1px solid border-color(primary);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

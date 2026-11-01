@@ -1,0 +1,11 @@
+@use "../../../styles/forms" as *;
+@use "../../../styles/layout" as *;
+
+.textarea {
+  @include form-control;
+  height: auto;
+  min-height: 96px;
+  padding: 10px space(3);
+  line-height: 1.5;
+  resize: vertical;
+}

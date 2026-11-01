@@ -1,0 +1,54 @@
+@use "sass:map";
+
+$color: (
+  primary: #111827,
+  secondary: #4b5563,
+  muted: #6b7280,
+  disabled: #9ca3af,
+  accent: #2b4acb,
+  accent-strong: #2340b0,
+  danger: #b42318,
+  success: #17663a,
+  warning: #8a4300,
+  warning-dot: #d97706,
+  success-dot: #22a05a,
+  white: #ffffff,
+);
+
+$background: (
+  primary: #ffffff,
+  secondary: #f9fafb,
+  sidebar: #f8f9fb,
+  accent: #e8eeff,
+  danger: #fef3f2,
+  warning: #fff1e0,
+  success: #e7f6ec,
+  overlay: rgba(17, 24, 39, 0.4),
+);
+
+$border: (
+  primary: #e5e7eb,
+  strong: #d1d5db,
+  row: #eef0f3,
+  danger: #d92d20,
+  danger-soft: #f7c6c2,
+);
+
+@function -token($map, $name, $kind) {
+  @if not map.has-key($map, $name) {
+    @error "Unknown #{$kind}: #{$name}";
+  }
+  @return map.get($map, $name);
+}
+
+@function color($type) {
+  @return -token($color, $type, "color");
+}
+
+@function background($type) {
+  @return -token($background, $type, "background");
+}
+
+@function border-color($type) {
+  @return -token($border, $type, "border colour");
+}

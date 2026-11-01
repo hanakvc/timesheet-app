@@ -1,0 +1,16 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.field {
+  @include flex-column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.error {
+  @include flex-row;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: color(danger);
+}

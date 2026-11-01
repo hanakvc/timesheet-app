@@ -1,0 +1,66 @@
+@use "../../../../styles/colors" as *;
+@use "../../../../styles/layout" as *;
+
+.node {
+  list-style: none;
+}
+
+.row {
+  @include flex-row;
+  @include focus-ring;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 space(4);
+  border: 0;
+  border-radius: radius(small);
+  background: transparent;
+  color: color(primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    background: background(secondary);
+  }
+}
+
+.chevron,
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: color(muted);
+}
+
+.name {
+  flex-shrink: 0;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.id {
+  flex-shrink: 0;
+}
+
+.description {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.children {
+  @include flex-column;
+  margin: 0 0 space(2) 23px;
+  padding: 0 0 0 space(3);
+  border-left: 1px solid border-color(primary);
+}

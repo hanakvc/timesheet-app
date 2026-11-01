@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "colors" as *;
+
+$font-family: (
+  inter: var(--ff-inter),
+);
+
+$font-weight: (
+  normal: 400,
+  medium: 500,
+  bold: 600,
+);
+
+$font-size: (
+  xxSmall: 12px,
+  xSmall: 13px,
+  small: 14px,
+  normal: 16px,
+  large: 20px,
+  xLarge: 24px,
+);
+
+@function -token($map, $name, $kind) {
+  @if not map.has-key($map, $name) {
+    @error "Unknown #{$kind}: #{$name}";
+  }
+  @return map.get($map, $name);
+}
+
+@function font-family($type) {
+  @return -token($font-family, $type, "font family");
+}
+
+@function font-weight($type) {
+  @return -token($font-weight, $type, "font weight");
+}
+
+@function font-size($type) {
+  @return -token($font-size, $type, "font size");
+}
+
+@mixin text-modifiers {
+  @each $name in (primary, secondary, muted, danger, success) {
+    .color-#{$name} {
+      color: color($name);
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.region {
+  position: fixed;
+  right: space(6);
+  bottom: space(6);
+  z-index: 40;
+  width: min(380px, calc(100% - 32px));
+}
+
+.snackbar {
+  @include flex-row;
+  align-items: flex-start;
+  gap: space(3);
+  padding: space(4);
+  border: 1px solid border-color(primary);
+  border-radius: radius(large);
+  background: background(primary);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.14);
+  animation: rise 0.18s ease-out;
+}
+
+.text {
+  @include flex-column;
+  flex: 1;
+  min-width: 0;
+  gap: 6px;
+}
+
+.icon {
+  flex: none;
+  margin-top: 1px;
+}
+
+.success .icon {
+  color: color(success);
+}
+
+.error .icon {
+  color: color(danger);
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snackbar {
+    animation: none;
+  }
+}

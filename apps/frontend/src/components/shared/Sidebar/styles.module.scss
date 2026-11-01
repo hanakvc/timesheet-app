@@ -1,0 +1,66 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+@use "../../../styles/typography" as *;
+
+.sidebar {
+  @include flex-column;
+  gap: 28px;
+  padding: 22px space(3);
+}
+
+.brand {
+  @include flex-row;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.logo {
+  @include flex-center;
+  width: 30px;
+  height: 30px;
+  border-radius: radius(small);
+  background: color(accent);
+  color: color(white);
+}
+
+.brandName {
+  letter-spacing: -0.01em;
+}
+
+.list {
+  @include flex-column;
+  gap: space(1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  @include flex-row;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: radius(small);
+  color: color(secondary);
+  font-size: font-size(small);
+  text-decoration: none;
+
+  &:hover {
+    background: background(secondary);
+    color: color(primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid color(accent);
+    outline-offset: 2px;
+  }
+}
+
+.active,
+.active:hover {
+  background: background(accent);
+  color: color(accent-strong);
+  font-weight: font-weight(medium);
+}

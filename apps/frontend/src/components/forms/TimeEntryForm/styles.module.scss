@@ -1,0 +1,47 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.form {
+  @include flex-column;
+  gap: space(6);
+}
+
+.formError {
+  @include flex-row;
+  align-items: flex-start;
+  gap: space(2);
+  padding: 14px space(4);
+  border: 1px solid border-color(danger-soft);
+  border-radius: radius(medium);
+  background: background(danger);
+  color: color(danger);
+}
+
+.times {
+  @include flex-column;
+  gap: space(3);
+}
+
+.timeFields {
+  @include flex-row;
+  flex-wrap: wrap;
+  gap: space(3);
+
+  > * {
+    flex: 1 1 180px;
+  }
+}
+
+.duration {
+  @include flex-row;
+  align-items: center;
+  gap: space(2);
+  padding: 10px space(3);
+  border-radius: radius(small);
+  background: background(secondary);
+  color: color(secondary);
+}
+
+.durationValue {
+  margin-left: auto;
+}

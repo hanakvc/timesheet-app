@@ -1,0 +1,50 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+@use "../../../styles/typography" as *;
+
+.overlay {
+  @include flex-center;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  padding: space(4);
+  background: background(overlay);
+}
+
+.dialog {
+  @include flex-column;
+  gap: space(4);
+  width: min(440px, 100%);
+  padding: space(6);
+  border: 1px solid border-color(primary);
+  border-radius: 14px;
+  background: background(primary);
+  box-shadow: 0 20px 48px rgba(17, 24, 39, 0.18);
+  outline: none;
+}
+
+.icon {
+  @include flex-center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: background(danger);
+  color: color(danger);
+}
+
+.text {
+  @include flex-column;
+  gap: space(2);
+}
+
+.title {
+  font-size: font-size(normal);
+}
+
+.actions {
+  @include flex-row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: space(1);
+}

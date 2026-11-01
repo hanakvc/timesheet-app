@@ -1,0 +1,53 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+@use "../../../styles/typography" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: radius(full);
+  font-size: font-size(xxSmall);
+  font-weight: font-weight(medium);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.accent {
+  background: background(accent);
+  color: color(accent-strong);
+
+  .dot {
+    background: color(accent);
+  }
+}
+
+.warning {
+  background: background(warning);
+  color: color(warning);
+
+  .dot {
+    background: color(warning-dot);
+  }
+}
+
+.success {
+  background: background(success);
+  color: color(success);
+
+  .dot {
+    background: color(success-dot);
+  }
+}
+
+.neutral {
+  background: background(secondary);
+  color: color(secondary);
+}

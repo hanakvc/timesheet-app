@@ -1,0 +1,49 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.page {
+  @include flex-column;
+  gap: space(6);
+}
+
+.header {
+  @include flex-row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: space(4);
+}
+
+.table {
+  min-width: 940px;
+}
+
+.idColumn {
+  width: 72px;
+}
+
+.taskColumn {
+  width: 100px;
+}
+
+.dateColumn {
+  width: 124px;
+}
+
+.durationColumn {
+  width: 96px;
+}
+
+.actionsColumn {
+  width: 104px;
+}
+
+.actions {
+  @include flex-row;
+  justify-content: flex-end;
+  gap: space(1);
+}
+
+.deleteButton {
+  color: color(danger) !important;
+}

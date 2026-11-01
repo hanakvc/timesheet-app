@@ -1,0 +1,22 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.shell {
+  @include flex-row;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 1 1 220px;
+  background: background(sidebar);
+  border-right: 1px solid border-color(primary);
+}
+
+.content {
+  @include flex-column;
+  flex: 999 1 560px;
+  min-width: 0;
+  gap: space(6);
+  padding: space(8) space(10);
+}

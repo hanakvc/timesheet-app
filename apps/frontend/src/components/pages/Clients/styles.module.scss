@@ -1,0 +1,27 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+
+.page {
+  @include flex-column;
+  gap: space(6);
+}
+
+.header {
+  @include flex-column;
+  gap: space(2);
+}
+
+.tree {
+  @include flex-column;
+  margin: 0;
+  padding: space(2);
+  border: 1px solid border-color(primary);
+  border-radius: radius(large);
+  background: background(primary);
+
+  > li + li {
+    margin-top: space(1);
+    padding-top: space(1);
+    border-top: 1px solid border-color(row);
+  }
+}

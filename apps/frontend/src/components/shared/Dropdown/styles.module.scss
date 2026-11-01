@@ -1,0 +1,51 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/forms" as *;
+@use "../../../styles/layout" as *;
+
+$arrow-size: 16px;
+
+.control {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.controlCompact {
+  display: inline-block;
+  width: auto;
+}
+
+.select {
+  @include form-control;
+  appearance: none;
+  padding-right: calc(#{space(3)} + #{$arrow-size} + #{space(2)});
+}
+
+.compact {
+  width: auto;
+  height: 36px;
+  padding: 0 calc(#{space(2)} + #{$arrow-size} + #{space(1)}) 0 space(2);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: space(3);
+  transform: translateY(-50%);
+  color: color(secondary);
+  pointer-events: none;
+
+  .compact + & {
+    right: space(2);
+  }
+
+  .select:disabled + & {
+    color: color(disabled);
+  }
+}
+
+.inline {
+  @include flex-row;
+  align-items: center;
+  gap: space(2);
+}

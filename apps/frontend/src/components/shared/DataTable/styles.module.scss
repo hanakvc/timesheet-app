@@ -1,0 +1,79 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+@use "../../../styles/typography" as *;
+
+.wrapper {
+  position: relative;
+  overflow-x: auto;
+  border: 1px solid border-color(primary);
+  border-radius: radius(large);
+  background: background(primary);
+}
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: font-size(small);
+
+  th {
+    padding: space(3) space(4);
+    border-bottom: 1px solid border-color(primary);
+    background: background(secondary);
+    color: color(secondary);
+    font-size: font-size(xxSmall);
+    font-weight: font-weight(medium);
+    text-align: left;
+  }
+
+  td {
+    padding: space(3) space(4);
+    border-bottom: 1px solid border-color(row);
+    vertical-align: middle;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
+.caption {
+  @include visually-hidden;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hidden {
+  @include visually-hidden;
+}
+
+.sortButton {
+  @include focus-ring;
+  display: inline-flex;
+  align-items: center;
+  gap: space(1);
+  margin: -2px -4px;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover {
+    color: color(primary);
+  }
+}
+
+.sorted {
+  color: color(primary);
+}

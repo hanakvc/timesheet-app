@@ -1,0 +1,5 @@
+@use "../../../styles/forms" as *;
+
+.input {
+  @include form-control;
+}

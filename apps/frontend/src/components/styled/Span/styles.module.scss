@@ -1,0 +1,15 @@
+@use "../../../styles/typography" as *;
+
+@each $size in (xxSmall, xSmall, small, normal) {
+  .size-#{$size} {
+    font-size: font-size($size);
+  }
+}
+
+@each $weight in (normal, medium, bold) {
+  .weight-#{$weight} {
+    font-weight: font-weight($weight);
+  }
+}
+
+@include text-modifiers;

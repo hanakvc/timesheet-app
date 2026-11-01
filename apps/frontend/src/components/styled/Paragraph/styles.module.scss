@@ -1,0 +1,14 @@
+@use "../../../styles/typography" as *;
+
+.paragraph {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@each $size in (xxSmall, xSmall, small) {
+  .size-#{$size} {
+    font-size: font-size($size);
+  }
+}
+
+@include text-modifiers;

@@ -1,0 +1,124 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/layout" as *;
+@use "../../../styles/typography" as *;
+
+.button {
+  @include focus-ring;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: radius(small);
+  font-family: inherit;
+  font-weight: font-weight(medium);
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: space(2);
+}
+
+.medium {
+  min-height: 40px;
+  padding: 0 space(4);
+  font-size: font-size(small);
+}
+
+.small {
+  min-height: 36px;
+  padding: 0 space(3);
+  font-size: font-size(xSmall);
+}
+
+.iconOnly {
+  width: 36px;
+  min-height: 36px;
+  padding: 0;
+}
+
+.primary {
+  background: color(accent);
+  color: color(white);
+
+  &:hover:not(:disabled) {
+    background: color(accent-strong);
+  }
+}
+
+.secondary {
+  background: background(primary);
+  border-color: border-color(strong);
+  color: color(primary);
+
+  &:hover:not(:disabled) {
+    background: background(secondary);
+  }
+}
+
+.danger {
+  background: color(danger);
+  color: color(white);
+
+  &:hover:not(:disabled) {
+    filter: brightness(0.92);
+  }
+}
+
+.tertiary {
+  background: transparent;
+  color: color(secondary);
+
+  &:hover:not(:disabled) {
+    background: background(secondary);
+    color: color(primary);
+  }
+}
+
+.secondary:disabled:not(.loading),
+.tertiary:disabled:not(.loading) {
+  color: color(disabled);
+  background: background(secondary);
+}
+
+.primary:disabled:not(.loading),
+.danger:disabled:not(.loading) {
+  opacity: 0.45;
+}
+
+.loading .label {
+  visibility: hidden;
+}
+
+.spinner {
+  @include flex-center;
+  position: absolute;
+  inset: 0;
+
+  svg {
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+.loadingLabel {
+  @include visually-hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner svg {
+    animation-duration: 2.4s;
+  }
+}
